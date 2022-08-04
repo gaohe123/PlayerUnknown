@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>绝地求生</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <!-- 清晰的语义化 -->
+    <!-- <header>
+    </header>
+    <main></main>
+    <footer>
+    </footer> -->
+    <div class="header">
+        <div class="items">
+            <a class="logo" href="https://pubg.qq.com/"></a>
+            <a href="">官网首页</a>
+            <a href="">绑定查询</a>
+            <a href="" class="yellow">国服预约</a>
+            <a href="" class="yellow">老兵绑定</a>
+            <a href="">游戏特色</a>
+            <a href="">社区APP</a>
+            <a href="">网吧认证</a>
+            <a href="" class="enter-button">进入官网</a>
+        </div>
+    </div>
+    <div class="wrapper">
+        <!-- section也是块级元素，用来表示一个区域 -->
+        <section>
+            <video muted autoplay loop src="./videos/1.mp4"></video>
+            <a href="#" class="play"></a>
+            <img src="./imgs/logo_b.png" alt="" class="logo_b">
+        </section>
+        <!-- 写实体验 -->
+        <section>
+            <video muted autoplay loop src="./videos/2.mp4"></video>
+            <div class="real">
+                <div class="experience"></div>
+                <div class="sports"></div>
+                <i>连呼吸都必须小心翼翼，前所未有的紧张刺激体验</i>
+            </div>
+            <!-- 呼吸 -->
+            <div class="breath">
+                <span id="firstPlus">+</span>
+                <b></b>
+                <b></b>
+            </div>
+            <!-- 背景图 -->
+            <div class="real-bg">
+                <div class="soldier">
+                    <img src="./imgs/img_man.png" alt="">
+                    <!-- background-color background-image background:url() background-size background-position -->
+                    <span title="头盔" style="background-image:url(./imgs/equip.png);left:-1rem;top:.2rem;"
+                        class="large hat"></span>
+                    <span title="背包"
+                        style="background-image:url(./imgs/equip.png);background-position:0 -.83rem; left:-1rem;top:2rem;"
+                        class="large"></span>
+                    <span title="防具"
+                        style="background-image:url(./imgs/equip.png);background-position:0 -1.66rem; left:-1rem;top:3rem;"
+                        class="large"></span>
+                    <span title="腰部"
+                        style="background-image:url(./imgs/equip.png);background-position:0 -2.49rem; left:-1rem;top:4rem;"
+                        class="large"></span>
+                    <span title="眼镜"
+                        style="background-image:url(./imgs/equip.png);background-position:0 -3.29rem; right:-1rem;top:.2rem;"
+                        class="small"></span>
+                    <span title="口罩"
+                        style="background-image:url(./imgs/equip.png);background-position:0 -3.98rem; right:-1rem;top:1rem;"
+                        class="small"></span>
+                    <span title="内衣"
+                        style="background-image:url(./imgs/equip.png);background-position:0 -4.67rem; right:-1rem;top:2.2rem;"
+                        class="small"></span>
+                    <span title="外衣"
+                        style="background-image:url(./imgs/equip.png);background-position:0 -5.36rem;right:-1rem;top:3rem;"
+                        class="small"></span>
+                    <span title="手套"
+                        style="background-image:url(./imgs/equip.png);background-position:0 -6.05rem;right:-1rem;top:3.78rem;"
+                        class="small"></span>
+                    <span title="裤子"
+                        style="background-image:url(./imgs/equip.png);background-position:0 -6.74rem;right:-1rem;top:5rem;"
+                        class="small"></span>
+                    <span title="鞋子"
+                        style="background-image:url(./imgs/equip.png);background-position:0 -7.43rem;right:-1rem;top:6.17rem;"
+                        class="small"></span>
+                </div>
+            </div>
+        </section>
+        <!-- 大世界 -->
+        <section>
+            <video muted autoplay loop src="./videos/3.mp4"></video>
+            <div class="big-world">
+                <div></div>
+                <div></div>
+                <i>真实的射击体验，多种枪械与配件，眼观六路耳听八方</i>
+            </div>
+            <!-- 呼吸 -->
+            <div class="breath">
+                <span id="secondPlus">+</span>
+                <b></b>
+                <b></b>
+            </div>
+            <!-- 大世界背景 -->
+            <div class="big-world-bg">
+                <!-- 武器 -->
+                <div class="weapons">
+                    <span style="background-position: 0 -8.12rem;margin-left: 3.2rem;" title="瞄具"></span>
+                    <div class="first-weapon"></div>
+                    <span style="background-position: 0 -9.32rem;margin-left: .2rem;" title="枪口"></span>
+                    <span style="background-position: -1px -8.72rem;margin-left: 2.39rem;" title="弹夹"></span>
+                    <span style="background-position: 0 -9.92rem;margin-left: 1.3rem;" title="枪托"></span>
+                    <div class="line"></div>
+                    <span style="background-position: 0 -8.12rem;margin-left: 3.2rem;" title="瞄具"></span>
+                    <div class="second-weapon"></div>
+                    <span style="background-position: 0 -11.12rem;margin-left: .2rem;" title="枪口"></span>
+                    <span style="background-position: 0 -11.72rem;margin-left: 2.39rem;" title="弹夹"></span>
+                </div>
+            </div>
+        </section>
+        <!-- 天气和地形 -->
+        <section style="background: black;">
+            <!-- 天气盒子 -->
+            <div class="weather-box on">
+                <div>
+                    <img src="./imgs/img_weather1.jpg" alt="">
+                    <span></span>
+                </div>
+                <div>
+                    <img src="./imgs/img_weather2.jpg" alt="">
+                    <span></span>
+                </div>
+                <div>
+                    <img src="./imgs/img_weather3.jpg" alt="">
+                    <span></span>
+                </div>
+            </div>
+            <!-- 地形盒子 -->
+            <div class="terrain-box">
+                <div>
+                    <img src="./imgs/img_terrain1.jpg" alt="">
+                </div>
+                <div>
+                    <img src="./imgs/img_terrain2.jpg" alt="">
+                </div>
+                <div>
+                    <img src="./imgs/img_terrain3.jpg" alt="">
+                </div>
+                <div>
+                    <img src="./imgs/img_terrain4.jpg" alt="">
+                </div>
+                <div>
+                    <img src="./imgs/img_terrain5.jpg" alt="">
+                </div>
+            </div>
+            <!-- 多种天气背景图 -->
+            <div class="weather-bg"></div>
+            <!-- 天气和地形选项 -->
+            <div class="weather-options">
+                <div class="weather on">
+                    <i></i>
+                    <b>天气</b>
+                    <em></em>
+                    <p>
+                        天气将严重影响视野，既潜藏着危险，也能成为你的掩护
+                    </p>
+                </div>
+                <div class="terrain">
+                    <i></i>
+                    <b>地形</b>
+                    <em></em>
+                    <p>
+                        善于利用不同的地形埋伏和躲避，才能取得胜利
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- 组队开车 -->
+        <section>
+            <video muted autoplay loop src="./videos/5.mp4"></video>
+            <div class="drive">
+                <div class="experience"></div>
+                <div class="sports"></div>
+                <i>丰富载具，团队合作，好友开黑</i>
+            </div>
+            <!-- 组队开车盒子 -->
+            <div class="drive-box">
+                <!-- 交通工具 -->
+                <div class="vehicle">
+                    <img class="show" src="./imgs/img_vehicle1.png" alt="">
+                    <img src="./imgs/img_vehicle2.png" alt="">
+                    <img src="./imgs/img_vehicle3.png" alt="">
+                    <img src="./imgs/img_vehicle4.png" alt="">
+                    <img src="./imgs/img_vehicle5.png" alt="">
+                </div>
+                <!-- 底部 -->
+                <div class="footer">
+                    <div class="on">
+                        <span class="two"></span>
+                        <i>2人载具</i>
+                    </div>
+                    <div>
+                        <span class="three"></span>
+                        <i>3人载具</i>
+                    </div>
+                    <div>
+                        <span class="four"></span>
+                        <i>4人载具</i>
+                    </div>
+                    <div>
+                        <span class="five"></span>
+                        <i>5人载具</i>
+                    </div>
+                    <div>
+                        <span class="boat"></span>
+                        <i>船</i>
+                    </div>
+                </div>
+            </div>
+            <!-- 呼吸 -->
+            <div class="breath">
+                <span id="thirdPlus">+</span>
+                <b></b>
+                <b></b>
+            </div>
+        </section>
+        <!-- 最后一页 -->
+        <section class="last">
+            <!-- 呼吸 -->
+            <div class="breath first">
+                <span>+</span>
+                <b></b>
+                <b></b>
+            </div>
+            <!-- 第一个视频 -->
+            <div class="first-video">
+                <video src="./videos/5-2.mp4" autoplay muted loop></video>
+                <div class="info">
+                    <h3>安全区</h3>
+                    <div>不断缩小的安全区域，位置随机，根<br>据战术随机应变。</div>
+                </div>
+            </div>
+            <!-- 呼吸 -->
+            <div class="breath second">
+                <span>+</span>
+                <b></b>
+                <b></b>
+            </div>
+            <!-- 第二个视频 -->
+            <div class="second-video">
+                <video src="./videos/5-1.mp4" autoplay muted loop></video>
+                <div class="info">
+                    <h3>轰炸区</h3>
+                    <div>随机轰炸地图的某个区域，需要尽快<br>撤离（也可以躲在房子里祈祷）。</div>
+                </div>
+            </div>
+        </section>
+        <!-- 滑动提示 -->
+        <div class="slider-tip"></div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

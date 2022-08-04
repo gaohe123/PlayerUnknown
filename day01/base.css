@@ -1,0 +1,50 @@
+/* 样式初始化 */
+*{
+    margin: 0;
+    padding: 0;
+}
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,dl,dt,dd,li {
+    margin: 0;
+    padding: 0;
+    /* 去点 */
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #666764;
+}
+
+img,input {
+    vertical-align: middle;
+    border: 0 none;
+    outline-style: none;
+    padding: 0;
+}
+
+.w {
+    width: 1200px;
+    /* 居中 */
+    margin: 0 auto;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+}
+
+.clearfix {
+     zoom: 1;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}

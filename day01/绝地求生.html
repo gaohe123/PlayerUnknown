@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./base.css">
+    <style>
+        body,html{
+            height: 100%;
+            width: 100%;
+            overflow-x:hidden;
+            /* overflow-y:hidden; */
+        }
+        header{
+            width: 100%;
+            background: url('./imgs/bg_top.png');
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            height: 88px;
+            top: 0;
+            /* height: 60px; */
+        }
+  
+        .dh{
+             width: 1205px;
+            margin: 0 auto;
+            font-weight: bold;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            
+ 
+            /* font-size: 0; */
+ 
+        }
+     
+        body{
+            overflow: hidden;
+        }
+        .headLi{
+            color: white;
+        }
+        body,html{
+            overflow-y:hidden;
+        }
+        .close{
+            position: relative;
+            height: 100%;
+        }
+     
+        .model2{
+            background-color: aqua;
+        }
+        .log{
+            display: inline-block;
+            width: 129px;
+            height: 66px;
+            margin-top: 5px;
+            margin-left: 1px;
+            margin-right: 46px;
+        }
+        .headUl{
+            margin-top: 25px;
+            width: 50%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .button{
+            margin-top: 22px;
+            display: inline-block;
+            width: 142px;
+            height: 40px;
+        
+            color: white;
+            background: #e69800;
+            text-align: center;
+            line-height: 40px;
+ 
+        }
+        .wrapper{
+            height: 100%;
+            transition: transform .8s ease .3s;
+            
+        }
+        video{
+            object-fit: fill;
+            width: 100%;
+           height: 100%;
+            /* height: 100%; */
+  
+/* 
+            z-index: -9999; */
+        }
+        .yujaingjin{
+            background: url('./imgs/sprite.png') -205px -215px;
+            z-index: 2;
+            width: 500px;
+             height: 100px;
+            position: absolute;
+            top: 350px;
+            left: 45%;
+            transform: translate(-50%,-50%);
+        }
+        .yujaingjin1{
+            background: url('./imgs/sprite.png') -290px -317px;
+            z-index: 2;
+            width: 500px;
+             height: 100px;
+            position: absolute;
+            top: 460px;
+            left: 55%;
+            transform: translate(-50%,-50%);
+        
+        }
+        .yujaingjin2{
+            padding-left: 0.3rem;
+            line-height: 30px;
+            font-size: .14rem;
+            color: white;
+            position: absolute;
+            top: 520px;
+            left: 45%;
+            transform: translate(-50%,-50%);
+        }
+        .yujaingjin3{
+            position: fixed;
+            bottom:20px;
+            left: 50%;
+            width: 30px;
+            height: 80px;
+    
+            z-index: 5;
+            background: url('./imgs/sprite.png') -82px -1px;
+          
+        }
+        .huxi{  
+            position: absolute;
+            left: 1150px;
+                top: 570px;
+        }
+        .huxi span{
+            display: inline-block;
+                width: 30px;
+                height: 30px;
+                background-color: white;
+                line-height: 30px;
+                text-align: center;
+                border-radius: 50%;
+                position: absolute;
+                left: 0px;
+                top: 0px;
+        }
+        .man{
+            position: absolute;
+            top: 200px;
+            left: 1300px;
+            opacity: 0;
+        }
+        .spantow{
+            animation:huxiF1 1s linear infinite;
+        }
+        .spantree{
+            animation:huxiF2 1s linear infinite;
+        }
+        .spanone{
+            cursor: pointer;
+            background: rgba(255, 255, 255, .6);
+            color: #e69800;
+            z-index: 1;
+        }
+        .bag{
+            object-fit: fill;
+            width: 100%;
+           height: 100%;
+           display: none;
+        }
+        .index1{
+            background: url('./imgs/sprite.png') -0px -0px;
+            z-index: 2;
+            width: 80px;
+             height: 80px;
+            position: absolute;
+            top: 350px;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .index2{
+            background: url('./imgs//logo_b.png');
+            width: 700px;
+            height: 340px;
+            position: absolute;
+            top: 600px;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        @keyframes huxirenwu {
+          
+            to{
+                opacity: 1;
+                
+
+            }
+        }
+
+        @keyframes huxiF1 {
+            from{
+                opacity: 1;
+                transform: scale(1);
+
+            }
+            to{
+                opacity: 0;
+                transform: scale(2);
+                
+
+            }
+        }
+        @keyframes huxiF2 {
+            from{
+                opacity: 1;
+                transform: scale(1);
+
+            }
+            to{
+                opacity: 0;
+                transform: scale(3);
+                
+
+            }
+        }
+        @keyframes wenzi {
+            to{
+              left: 30%;
+
+            }
+        }
+        @keyframes wenzi1 {
+            to{
+              left: 20%;
+
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="dh">
+             <img src="./imgs/logo_b.png" alt="" class="log">
+             <ul class="headUl">
+                 <li class="headLi">官方首页</li>
+                 <li  class="headLi">绑定查询</li>
+                 <li style="color: #e69800;">国服预约</li>
+                 <li style="color: #e69800;">老兵绑定</li>
+                 <li  class="headLi">游戏特色</li>
+                 <li  class="headLi">社区APP</li>
+                 <li  class="headLi">网吧认证</li>
+             </ul>
+             <div class="button">进入官网</div>
+        </div>
+        <div class="yujaingjin3">
+
+        </div>
+    </header>
+    <div class="bigbox wrapper" id="wrapper">
+        <div class="close model1">
+            <video autoplay muted loop style="width: 100%" src="./videos/1.mp4"  class="v1" >
+         
+            </video>
+
+            <div class="index1">
+
+            </div>
+            <div class="index2">
+
+            </div>
+          
+         
+           
+        </div >
+        <div class="close model2">
+            <video autoplay muted loop style="width: 100%" src="./videos//2.mp4"  class="v1" id="v1">
+         
+               
+            </video>
+            <img src="./imgs/bg_section1.jpg" style="width: 100%"  alt="" class="bag" id="bag">
+            <div class="man" id="man">
+                <img src="./imgs//img_man.png" alt="">
+             
+            </div>
+           
+            <div class="yujaingjin" id="yu">
+
+            </div>
+            <div class="yujaingjin1" id="jiang">
+
+            </div>
+            <div class="yujaingjin2" id="jun">
+                连呼吸都必须小心翼翼，前所未有的紧张刺激体验
+            </div>
+
+            <div class="huxi" id="huxione">
+            <span class="spanone" id="spanone">
+                +
+            </span>
+            <span class="spantow"></span>
+            <span class="spantree"></span>
+            </div>
+        </div>
+        <div class="close model3">
+
+        </div>
+        <div class="close model4">
+
+        </div>
+        <div class="close model5">
+
+        </div>
+        <div class="close model6">
+
+        </div>
+        
+    </div>
+</body>
+<script>
+    var spanone = document.getElementById('spanone')
+    var v1 = document.getElementById('v1')
+    var bag1 = document.getElementById('bag')
+    
+    var huxione = document.getElementById('huxione')
+    
+    var man = document.getElementById('man')
+    // console.log(man)
+    var yu = document.getElementById('yu')
+    var jiang = document.getElementById('jiang')
+    var jun = document.getElementById('jun')
+// console.log(jiang)
+    // console.log(bag1)
+        // console.log(hu 
+        // console.log( bag1.style)
+        spanone.onclick = function(){
+           
+            v1.style.display='none'
+            bag1.style.display='block'
+            huxione.style.display='none'
+            var num=9
+        var time =    setInterval(() => {
+              
+                num--
+                console.log(num)
+                if(num==8)
+                {
+                    yu.style.animation='wenzi1 .5s linear forwards '
+                }
+                else if(num==6)
+                {
+                    jiang.style.animation='wenzi .5s linear forwards '
+                }else if(num==3)
+                {
+                     jun.style.animation='wenzi1 .5s linear forwards '
+                     
+                }else if(num==0){
+                    man.style.animation='huxirenwu .5s forwards '
+
+
+                    clearInterval(time)
+                }
+               
+            }, 100);
+            
+            // jiang.style.left='30%'
+            
+           
+        }
+        let index = 0;
+        const wrapper = document.all.wrapper
+        // console.log(document.all.wrapper)
+        // console.log(wrapper)
+        let animating = false
+        document.onmousewheel = (e) =>{
+            // console.log(e)
+            if(animating) return
+            animating = true
+            if(e.wheelDeltaY>0)
+            {
+                index = Math.min(++index,0)
+            }else{
+                index = Math.max(--index,-5)
+            }
+            wrapper.style.transform = `translateY(${index * 100}%)`
+            setTimeout(() => {
+                animating=false
+            }, 1100);
+        }
+</script>
+</html>

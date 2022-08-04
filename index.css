@@ -1,0 +1,964 @@
+* {
+    padding: 0;
+    margin : 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+html {
+    font-size: 80px;
+}
+
+body {
+    font-size: 12px;
+    overflow : hidden;
+}
+
+.header {
+    position   : fixed;
+    left       : 0;
+    top        : 0;
+    /* width   : 100%; */
+    right      : 0;
+    height     : 88px;
+    z-index    : 999;
+    background : url(./imgs/bg_top.png) no-repeat 50% 0;
+}
+
+/* css属性可以继承
+可以继承的属性有：font，color
+
+多个行内块之间有间隙
+多个行内元素同样有间隙
+*/
+
+/* 父相子绝 */
+.header .items {
+    width      : 1205px;
+    margin     : 0 auto;
+    font-weight: bold;
+    line-height: 76px;
+    font-size  : 0;
+    position   : relative;
+}
+
+.header .items a {
+    color          : #ccc;
+    text-decoration: none;
+    font-size      : 14px;
+}
+
+.header .items a:not(:last-child):hover {
+    color: #e69800;
+}
+
+.header .items .enter-button {
+    display    : inline-block;
+    width      : 142px;
+    height     : 40px;
+    position   : absolute;
+    right      : 0;
+    top        : 19px;
+    color      : white;
+    background : #e69800;
+    text-align : center;
+    line-height: 40px;
+    margin     : 0 !important;
+}
+
+/* not:不是某个属性 */
+.header .items a:not(:first-child) {
+    vertical-align: top;
+    margin        : 0 24px;
+}
+
+.header .items .yellow {
+    color: #e69800;
+}
+
+.header .logo {
+    display     : inline-block;
+    width       : 129px;
+    height      : 66px;
+    margin-top  : 5px;
+    margin-left : 1px;
+    background  : url(./imgs/logo.png);
+    margin-right: 46px;
+}
+
+.wrapper {
+    height    : 100%;
+    transition: margin-top .7s ease;
+}
+
+.wrapper section {
+    position: relative;
+    height  : 100%;
+}
+
+/* object-fit 用于视频等填充选项 */
+/* 精灵图(雪碧图)：将多张图片合并到一张里，通过定位的方式去显示相应的图片 */
+.wrapper video {
+    width     : 100%;
+    height    : 100%;
+    object-fit: fill;
+}
+
+/* 播放图标 */
+.play {
+    display        : inline-block;
+    position       : absolute;
+    top            : 3.68rem;
+    left           : 50%;
+    width          : .81rem;
+    height         : .81rem;
+    margin-left    : -.405rem;
+    background     : url(./imgs/sprite.png);
+    background-size: 13.4rem 9.79rem;
+}
+
+.wrapper section .logo_b {
+    position   : absolute;
+    top        : 5.15rem;
+    left       : 50%;
+    width      : 7.1819rem;
+    height     : 3.6325rem;
+    margin-left: -3.59095rem;
+}
+
+.wrapper .slider-tip {
+    position   : fixed;
+    bottom     : .28rem;
+    left       : 50%;
+    width      : .24rem;
+    height     : .78rem;
+    margin-left: -.12rem;
+    z-index    : 5;
+    background : url(./imgs/sprite.png) no-repeat -.86rem 0/13.4rem 9.79rem;
+}
+
+/* 第二页的父元素 */
+.wrapper .real {
+    position   : absolute;
+    top        : 4.47rem;
+    left       : 50%;
+    margin-left: -2.7rem;
+    z-index    : 6;
+}
+
+/* 写实体验背景 */
+.wrapper .real .experience {
+    width     : 4.45rem;
+    height    : .97rem;
+    background: url(./imgs/sprite.png) -2.48rem -2.17rem/13.4rem 9.79rem;
+    transition: margin-left .5s ease;
+}
+
+/* 竞技 */
+.wrapper .real .sports {
+    width      : 4.62rem;
+    height     : .95rem;
+    background : url(./imgs/sprite.png) -3.26rem -3.21rem/13.4rem 9.79rem;
+    margin-top : 6px;
+    margin-left: 62px;
+    transition : margin-left .5s ease .1s;
+}
+
+.wrapper .real i {
+    padding-left: .3rem;
+    line-height : 30px;
+    font-size   : .14rem;
+    color       : white;
+    transition  : margin-left .5s ease .2s;
+}
+
+.wrapper .move-left .experience {
+    margin-left: -4.68rem;
+}
+
+.wrapper .move-left .sports {
+    margin-left: -3.9rem;
+}
+
+.wrapper .move-left i {
+    margin-left: -4.57rem;
+}
+
+/* 呼吸 */
+.wrapper .breath {
+    position   : absolute;
+    top        : 7.2rem;
+    left       : 50%;
+    margin-left: .95rem;
+}
+
+.wrapper .breath span {
+    display      : inline-block;
+    width        : .25rem;
+    height       : .25rem;
+    color        : #e69800;
+    font-weight  : bold;
+    font-size    : 0.16rem;
+    background   : rgba(255, 255, 255, .6);
+    text-align   : center;
+    line-height  : .23rem;
+    position     : absolute;
+    z-index      : 3;
+    border-radius: 50%;
+    cursor       : pointer;
+}
+
+.wrapper .breath b {
+    display      : inline-block;
+    width        : .25rem;
+    height       : .25rem;
+    background   : white;
+    position     : absolute;
+    border-radius: 50%;
+}
+
+.wrapper .breath b:nth-child(2) {
+    animation: zoom1 1s linear infinite;
+}
+
+.wrapper .breath b:nth-child(3) {
+    animation: zoom2 1s linear infinite;
+}
+
+/* 第一个放大的动画 */
+/* 
+from: 0%
+to:100%
+ */
+@keyframes zoom1 {
+    from {
+        opacity  : .8;
+        transform: scale(1);
+    }
+
+    to {
+        opacity  : 0;
+        transform: scale(2);
+    }
+}
+
+/* 第二个动画 */
+@keyframes zoom2 {
+    from {
+        opacity  : .8;
+        transform: scale(1);
+    }
+
+    to {
+        opacity  : 0;
+        transform: scale(3);
+    }
+}
+
+/* 写实体验背景 */
+.real-bg {
+    background     : url(./imgs/bg_section1.jpg) no-repeat 50% 0;
+    background-size: cover;
+    position       : absolute;
+    left           : 0;
+    top            : 0;
+    right          : 0;
+    bottom         : 0;
+    z-index        : -1;
+}
+
+.real-bg .soldier {
+    position   : absolute;
+    width      : 3.19rem;
+    height     : 7.32rem;
+    top        : 50%;
+    left       : 50%;
+    margin-top : -3.16rem;
+    margin-left: 2rem;
+    opacity    : 0;
+    transition : opacity 1s ease-in-out .4s;
+}
+
+.real-bg .soldier img {
+    width : 100%;
+    height: 100%;
+}
+
+/* 最大的块 */
+.real-bg .soldier .large {
+    width : .83rem;
+    height: .83rem;
+}
+
+/* 小块 */
+.real-bg .soldier .small {
+    width : .7rem;
+    height: .7rem;
+}
+
+.real-bg .soldier span {
+    display         : inline-block;
+    position        : absolute;
+    border          : .01rem solid #646863;
+    background-color: rgba(0, 0, 0, .5);
+    background-size : 9.66rem 12.92rem;
+    cursor          : pointer;
+}
+
+.real-bg .soldier span:hover {
+    border-color: #e69800;
+}
+
+.wrapper .fade-in {
+    z-index: 5;
+}
+
+.wrapper .fade-in .soldier {
+    opacity: 1;
+}
+
+.hat {
+    animation: hat-change 3s steps(7, end);
+}
+
+.hat:hover {
+    animation-iteration-count: infinite;
+}
+
+@keyframes hat-change {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: -5.74rem 0;
+    }
+}
+
+/* 第三页，大世界 */
+.big-world-bg {
+    background     : url(./imgs/bg_section2.jpg) no-repeat 50% 0;
+    background-size: cover;
+    position       : absolute;
+    left           : 0;
+    top            : 0;
+    right          : 0;
+    bottom         : 0;
+    z-index        : -1;
+}
+
+/* 第三页的文字父元素 */
+.wrapper .big-world {
+    position   : absolute;
+    top        : 4.47rem;
+    left       : 50%;
+    margin-left: -2.615rem;
+    z-index    : 6;
+}
+
+/* 大世界 */
+.wrapper .big-world div:first-child {
+    width     : 3.87rem;
+    height    : 1.09rem;
+    background: url(./imgs/sprite.png) -7.93rem -2.17rem/13.4rem 9.79rem;
+    transition: margin-left .5s ease;
+}
+
+/* 竞技 */
+.wrapper .big-world div:nth-child(2) {
+    width      : 4.63rem;
+    height     : .97rem;
+    background : url(./imgs/sprite.png) -8.53rem -3.32rem/13.4rem 9.79rem;
+    margin-top : 6px;
+    margin-left: 62px;
+    transition : margin-left .5s ease .1s;
+}
+
+.wrapper .big-world i {
+    padding-left: 0.88rem;
+    line-height : 30px;
+    font-size   : .14rem;
+    color       : white;
+    transition  : margin-left .5s ease .2s;
+}
+
+/* 大世界移动 */
+.wrapper .big-world-move div:first-child {
+    margin-left: -4.68rem;
+}
+
+.wrapper .big-world-move div:nth-child(2) {
+    margin-left: -3.9rem;
+}
+
+.wrapper .big-world-move i {
+    margin-left: -5.18rem;
+}
+
+.wrapper .big-world-show {
+    z-index: 5;
+}
+
+.wrapper .big-world-show .weapons {
+    opacity: 1;
+}
+
+/* 武器 */
+.big-world-bg .weapons {
+    position  : absolute;
+    top       : 50%;
+    transform : translateY(-50%);
+    left      : 50%;
+    opacity   : 0;
+    transition: opacity 1s ease-in-out .4s;
+}
+
+/* 第一把枪 */
+.big-world-bg .weapons .first-weapon {
+    width     : 5.79rem;
+    height    : .88rem;
+    margin    : .1rem 0;
+    background: url(./imgs/weapon.png) 0 -.2rem/18.29rem 3.34rem;
+}
+
+.big-world-bg .weapons span {
+    display         : inline-block;
+    cursor          : pointer;
+    width           : .6rem;
+    height          : .6rem;
+    border          : .01rem solid #646863;
+    background      : url(./imgs/equip.png) 0 0/9.66rem 12.92rem;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.big-world-bg .weapons span:hover {
+    border-color: #e69800;
+}
+
+/* 分割线 */
+.big-world-bg .weapons .line {
+    width     : 7.15rem;
+    height    : .02rem;
+    background: url(./imgs/sprite.png) -4.53rem -8.5rem/13.4rem 9.79rem;
+    margin    : .3rem;
+}
+
+/* 第二把枪 */
+.big-world-bg .weapons .second-weapon {
+    width     : 6.06rem;
+    height    : 1.76rem;
+    margin    : .1rem 0;
+    background: url(./imgs/weapon.png) -6.09rem -1.48rem/18.29rem 3.34rem;
+}
+
+/* 天气地形 */
+.weather-box,
+.terrain-box {
+    position   : absolute;
+    left       : 0;
+    top        : 0;
+    right      : 0;
+    bottom     : 0;
+    z-index    : 2;
+    display    : flex;
+    align-items: stretch;
+    opacity    : 0;
+    transition : opacity .6s ease-in-out;
+}
+
+.weather-box.on,
+.terrain-box.on {
+    z-index: 3;
+    opacity: 1;
+}
+
+.weather-box div,
+.terrain-box div {
+    width     : 33%;
+    position  : relative;
+    overflow  : hidden;
+    transition: .3s ease;
+}
+
+.terrain-box div {
+    width: 20%;
+}
+
+.weather-box div:nth-child(2) {
+    width: 34%;
+}
+
+/* all: 所有的属性，只要有变化，就触发动画 */
+.weather-box img,
+.terrain-box img {
+    position  : absolute;
+    height    : 100%;
+    opacity   : .6;
+    transition: 2s ease-in-out .3s;
+}
+
+/* 第一张图片 */
+.weather-box div:nth-child(1) img {
+    left: -1.5rem;
+}
+
+/* 第二张图片 */
+.weather-box div:nth-child(2) img {
+    left       : 50%;
+    margin-left: -6rem;
+}
+
+/* 第三张图片 */
+.weather-box div:nth-child(3) img {
+    right: -1.5rem;
+}
+
+.weather-box div:hover {
+    width: 85%;
+}
+
+.weather-box div:hover img,
+.terrain-box div:hover img {
+    opacity: 1;
+}
+
+.weather-box div:nth-child(1):hover img {
+    left: 0;
+}
+
+.weather-box div:last-child:hover img {
+    right: 0;
+}
+
+/* 多种天气背景 */
+.weather-bg {
+    position  : absolute;
+    left      : 50%;
+    transform : translateX(-50%);
+    top       : 2rem;
+    width     : 7.22rem;
+    height    : .82rem;
+    background: url(./imgs/sprite.png) 0 -4.22rem/13.4rem 9.79rem;
+    z-index   : 10;
+}
+
+/* 天气盒子下的文字 */
+.weather-box span {
+    display   : inline-block;
+    width     : .93rem;
+    height    : .7rem;
+    background: url(./imgs/sprite.png) 0 0/13.4rem 9.79rem;
+    position  : absolute;
+    left      : 50%;
+    top       : 50%;
+    transform : translate(-50%, -50%);
+    z-index   : 2;
+    transition: opacity .5s linear;
+}
+
+.weather-box div:first-child span {
+    background-position: -2.38rem -6.85rem;
+}
+
+.weather-box div:nth-child(2) span {
+    background-position: -3.36rem -6.82rem;
+}
+
+.weather-box div:last-child span {
+    background-position: -4.33rem -6.85rem;
+}
+
+.weather-box div:hover span,
+.terrain-box div:hover span {
+    opacity: 0;
+}
+
+/* 天气和地形 */
+.weather-options {
+    position       : absolute;
+    bottom         : .3rem;
+    left           : 0;
+    right          : 0;
+    z-index        : 6;
+    display        : flex;
+    justify-content: center;
+    color          : white;
+}
+
+/* >:表示当前元素的下一级子元素 */
+.weather-options>div {
+    width : 2.25rem;
+    margin: 0 1rem;
+    cursor: pointer;
+}
+
+.weather-options i {
+    display   : block;
+    margin    : 0 auto;
+    width     : 1.08rem;
+    height    : .78rem;
+    background: url(./imgs/sprite.png) 0 -6.85rem/13.4rem 9.79rem;
+}
+
+.weather-options b {
+    display   : block;
+    text-align: center;
+    padding   : .2rem 0 .05rem;
+    font-size : .24rem;
+}
+
+.weather-options em {
+    display   : block;
+    margin    : 0 auto;
+    width     : .19rem;
+    background: white;
+    height    : 0.01rem;
+}
+
+.weather-options p {
+    text-align : center;
+    font-size  : .14rem;
+    line-height: .22rem;
+    margin-top : .1rem;
+}
+
+.weather-options .terrain i {
+    width              : 1.2rem;
+    background-position: -1.13rem -6.85rem;
+}
+
+.weather-options .on {
+    color: #e69800;
+}
+
+.weather-options .on em {
+    background: #e69800;
+}
+
+/* 
+    空格是表示多级层级关系
+    不空格表示当前样式元素同时包含这个样式
+ */
+.weather-options .weather.on i {
+    background-position: 0 -7.68rem;
+}
+
+.weather-options .terrain.on i {
+    background-position: -1.13rem -7.69rem;
+}
+
+/* 地形 */
+.terrain-box div:nth-child(-n+2) img {
+    left: -1rem;
+}
+
+.terrain-box div:nth-child(n+4) img {
+    right: -1rem;
+}
+
+.terrain-box div:nth-child(3) img {
+    left       : 50%;
+    margin-left: -4.25rem;
+}
+
+.terrain-box div:nth-child(-n+2):hover img {
+    left: 0;
+}
+
+.terrain-box div:nth-child(n+4):hover img {
+    right: 0;
+}
+
+.terrain-box div:hover {
+    width: 53%;
+}
+
+/* 组队开车 */
+/* 
+pointer-events: 鼠标事件的定义，none 就是取消默认事件，可以无视当前盒子，可以穿透当前盒子点击后面的盒子
+*/
+.wrapper .drive {
+    position      : absolute;
+    left          : 0;
+    top           : 0;
+    right         : 0;
+    bottom        : 0;
+    z-index       : 6;
+    pointer-events: none;
+}
+
+.wrapper .drive>* {
+    position: absolute;
+}
+
+/* 写实体验背景 */
+.wrapper .drive .experience {
+    width      : 3.69rem;
+    height     : .81rem;
+    left       : 50%;
+    margin-left: -2.5rem;
+    top        : 4rem;
+    background : url(./imgs/sprite.png) 0 -5.09rem/13.4rem 9.79rem;
+    transition : .5s ease;
+}
+
+.wrapper .drive .sports {
+    width      : 3.73rem;
+    height     : .82rem;
+    left       : 50%;
+    margin-left: -1.7rem;
+    top        : 5rem;
+    background : url(./imgs/sprite.png)-3.77rem -5.08rem/13.4rem 9.79rem;
+    transition : .5s ease .1s;
+}
+
+.wrapper .drive i {
+    padding-left: .3rem;
+    line-height : 30px;
+    font-size   : .14rem;
+    color       : white;
+    transition  : .5s ease .2s;
+    left        : 50%;
+    top         : 5.8rem;
+    margin-left : -2.6rem;
+    font-style  : normal;
+}
+
+.wrapper .drive.move .experience {
+    top        : 1.63rem;
+    left       : 50%;
+    margin-left: -3.745rem;
+}
+
+.wrapper .drive.move .sports {
+    top        : 1.63rem;
+    left       : 50%;
+    margin-left: 0;
+}
+
+.wrapper .drive.move i {
+    top        : 2.58rem;
+    margin-left: -1.29rem;
+    left       : 50%;
+}
+
+/* 交通工具盒子 */
+.drive-box {
+    position  : absolute;
+    left      : 0;
+    right     : 0;
+    top       : 0;
+    bottom    : 0;
+    z-index   : -1;
+    opacity   : 0;
+    background: url(./imgs/bg_section4.jpg) no-repeat 50% 0;
+    transition: opacity .7s ease;
+}
+
+.drive-box.show {
+    z-index: 5;
+    opacity: 1;
+}
+
+.vehicle {
+    position  : absolute;
+    left      : 0;
+    right     : 0;
+    bottom    : 1.3rem;
+    opacity   : 0;
+    transition: opacity 1s linear .3s;
+}
+
+.drive-box.show .vehicle {
+    opacity: 1;
+}
+
+.vehicle img {
+    position  : absolute;
+    left      : 50%;
+    bottom    : 0;
+    transform : translateX(-50%);
+    z-index   : 2;
+    opacity   : 0;
+    transition: opacity .7s ease-in-out;
+}
+
+.vehicle img.show {
+    opacity: 1;
+    z-index: 3;
+}
+
+.vehicle img:first-child {
+    width : 8.1rem;
+    height: 4.68rem;
+}
+
+.vehicle img:nth-child(2) {
+    width : 5.25rem;
+    height: 5.33rem;
+}
+
+.vehicle img:nth-child(3) {
+    width : 7.88rem;
+    height: 4.13rem;
+}
+
+.vehicle img:nth-child(4) {
+    width : 7.03rem;
+    height: 5.14rem;
+}
+
+.vehicle img:last-child {
+    width : 12.1rem;
+    height: 3.42rem;
+}
+
+/* 交通工具底部选项 */
+.drive-box .footer {
+    position       : absolute;
+    left           : 0;
+    bottom         : .2rem;
+    right          : 0;
+    display        : flex;
+    justify-content: center;
+    color          : white;
+    font-size      : .14rem;
+}
+
+.drive-box .footer div {
+    text-align: center;
+    margin    : 0 1rem;
+    cursor    : pointer;
+}
+
+.drive-box i {
+    font-style: normal;
+}
+
+.drive-box .footer span {
+    height    : .6rem;
+    background: url(./imgs/sprite.png) 0 0/13.4rem 9.79rem;
+    display   : block;
+    margin    : 0 auto;
+}
+
+.drive-box .footer .two {
+    width              : .68rem;
+    background-position: 0 -8.53rem
+}
+
+.drive-box .footer .three {
+    width              : .84rem;
+    background-position: -.73rem -8.53rem;
+}
+
+.drive-box .footer .four {
+    width              : .96rem;
+    background-position: -1.62rem -8.53rem;
+}
+
+.drive-box .footer .five {
+    width              : .93rem;
+    background-position: -2.63rem -8.53rem;
+}
+
+.drive-box .footer .boat {
+    width              : .87rem;
+    background-position: -3.6rem -8.53rem;
+}
+
+.footer div.on {
+    color: #e69800;
+}
+
+.footer div:first-child.on span {
+    background-position: 0 -9.18rem;
+}
+
+.footer div:nth-child(2).on span {
+    background-position: -.73rem -9.18rem;
+}
+
+.footer div:nth-child(3).on span {
+    background-position: -1.62rem -9.18rem;
+}
+
+.footer div:nth-child(4).on span {
+    background-position: -2.63rem -9.18rem;
+}
+
+.footer div:last-child.on span {
+    background-position: -3.6rem -9.18rem;
+}
+
+/* 最后一页 */
+.last {
+    background: url(./imgs/bg_section5.jpg) no-repeat 50% 0/cover;
+}
+
+/* 第一个呼吸 */
+.last .first {
+    left       : 50%;
+    top        : 50%;
+    margin-left: -2.3rem;
+    margin-top : .3rem;
+}
+
+.first-video {
+    width        : 4.5rem;
+    height       : 4.5rem;
+    position     : absolute;
+    left         : 50%;
+    top          : 50%;
+    transform    : translate(-37%, -40%);
+    border-radius: 50%;
+    opacity      : 0;
+    overflow     : hidden;
+    transition   : .3s linear;
+}
+
+.first:hover+.first-video {
+    opacity  : 1;
+    transform: translate(-35%, -40%);
+}
+
+.info {
+    position  : absolute;
+    left      : 0;
+    right     : 0;
+    bottom    : 0;
+    background: rgba(0, 0, 0, .3);
+    padding   : 10px 0 20px 0;
+    color     : white;
+}
+
+.info h3,
+.info div {
+    text-align: center;
+}
+
+.last .second {
+    margin-left: 2.1rem;
+}
+
+.second-video {
+    width        : 4.5rem;
+    height       : 4.5rem;
+    position     : absolute;
+    left         : 50%;
+    top          : 50%;
+    transform    : translate(-57%, -9%);
+    border-radius: 50%;
+    overflow     : hidden;
+    transition   : .3s linear;
+    opacity      : 0;
+}
+
+.second:hover+.second-video {
+    opacity  : 1;
+    transform: translate(-59%, -9%);
+    z-index  : 3;
+}
